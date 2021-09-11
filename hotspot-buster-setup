@@ -89,10 +89,10 @@ echo "nohook wpa_supplicant" >> /etc/dhcpcd.conf
 #setup ip forward
 sed 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/' /etc/sysctl.conf
 
-cp hotspot-buster-service.txt /etc/systemd/system/hotspot-buster.service
-cp hotspot-buster /usr/bin
-
-systemctl enable hotspot-buster.service
+systemctl unmask dnsmasq.service
+systemctl unmask hostapd.service
+systemctl enable dnsmasq.service
+systemctl enable hostapd.service 
 
 echo;echo;echo
 echo "A reboot is required to complete the setup"

@@ -1,2 +1,0 @@
-systemctl start hostapd.service
-systemctl start dnsmasq.service
